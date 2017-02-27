@@ -8,11 +8,11 @@ import { AppComponent } from './app.component';
 
 // Must export the config
 export const firebaseConfig = {
-  apiKey: '<your-key>',
-  authDomain: '<your-project-authdomain>',
-  databaseURL: '<your-database-URL>',
-  storageBucket: '<your-storage-bucket>',
-  messagingSenderId: '<your-messaging-sender-id>'
+  apiKey: 'AIzaSyCJ_oJk9i10SbBHbsczhz1_3G-ouoLgABw',
+  authDomain: 'contactlist-790be.firebaseapp.com',
+  databaseURL: 'https://contactlist-790be.firebaseio.com',
+  storageBucket: 'contactlist-790be.appspot.com',
+  messagingSenderId: '540468807621'
 };
 
 
