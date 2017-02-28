@@ -18,5 +18,8 @@
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
+  ],
+  "files": [
+    "../node_modules/firebase/firebase.d.ts"
   ]
 }
