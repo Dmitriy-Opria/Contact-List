@@ -14,6 +14,19 @@ export class AppComponent implements OnInit{
   categories:Category[];
   appState: string;
   activeKey: string;
+  
+  activeCompany:string;
+  activeCategory:string;
+  activeYearsInBusiness:string;
+  activeDescription:string;
+  activePhone:string;
+  activeEmail:string;
+  activeStreetAddress:string;
+  activeCity:string;
+  activeState:string;
+  activeZipcode:string;
+  
+  
   constructor(private _firebaseService: FirebaseService) {
     
   }
@@ -69,6 +82,37 @@ export class AppComponent implements OnInit{
     //console.log(newBusiness);
     this._firebaseService.addBusiness(newBusiness);
     
+    this.changeState('default');
+  }
+  showEdit(business){
+    this.changeState('edit', business.$key);
+    this.activeCompany =         business.company;
+    this.activeCategory =        business.category;
+    this.activeYearsInBusiness = business.years_in_business;
+    this.activeDescription =     business.description;
+    this.activePhone =           business.phone;
+    this.activeEmail =           business.email;
+    this.activeStreetAddress =   business.street_address;
+    this.activeCity =            business.city;
+    this.activeState =           business.state;
+    this.activeZipcode =         business.zipcode;
+  }
+  
+  updateBusiness(){
+    var updBusines = {
+      company: this.activeCompany,
+      category: this.activeCategory,
+      years_in_business: this.activeYearsInBusiness,
+      description: this.activeDescription,
+      phone: this.activePhone,
+      email:  this.activeEmail,
+      street_address: this.activeStreetAddress,
+      city: this.activeCity,
+      state: this.activeState,
+      zipcode: this.activeZipcode
+    }
+    
+    this._firebaseService.updateBusiness(this.activeKey, updBusines);
     this.changeState('default');
   }
 }
