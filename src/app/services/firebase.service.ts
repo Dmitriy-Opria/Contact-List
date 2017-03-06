@@ -33,7 +33,7 @@ export class FirebaseService{
   addBusiness(newBusiness){
     return this.businesses.push(newBusiness);
   }
-  updBusiness(key, updBusiness){
+  updateBusiness(key, updBusiness){
     return this.businesses.update(key,updBusiness);
   }
 }
